@@ -1,0 +1,10 @@
+[project]
+name = "doj-j6-prs"
+version = "0.1.0"
+description = "Inventory Jan 6 deleted Justice Department content"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "playwright>=1.60.0",
+    "wayback>=0.5.0",
+]
