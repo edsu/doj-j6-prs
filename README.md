@@ -9,18 +9,14 @@ missing.
 
 ## Run
 
-First, get a list of the HTML pages at `https://www.justice.gov/usao-dc/pr/` and write
-them as `urls.txt`:
+The code runs in two phases:
 
-```
-uv run inventory.py
-```
+1. `inventory`: which finds all the URLs for DoJ press release pages in the
+   Wayback Machine and writes them as `urls.txt`.
+2. `check`: which reads the urls and writes the ones that are missing from the
+   live web as `missing.txt`.
 
-Now you can check them, which should write out the URLs to a file `missing.txt`:
-
-```
-uv run check.py
-```
+You can run the `inventory` and `check` tasks together (or separately) with `make`.
 
 [January 6 US Capitol Attack]: https://en.wikipedia.org/wiki/January_6_United_States_Capitol_attack 
 [removed]: https://www.nbcnews.com/politics/justice-department/justice-department-deletes-press-releases-charges-jan-6-rioters-rcna346613
