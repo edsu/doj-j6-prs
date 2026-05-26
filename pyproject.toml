@@ -5,6 +5,12 @@ description = "Inventory Jan 6 deleted Justice Department content"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "gevent==25.9.1",
     "playwright>=1.60.0",
+    "sliver",
     "wayback>=0.5.0",
+    "werkzeug==3.1.7",
 ]
+
+[tool.uv.sources]
+sliver = { git = "https://github.com/anjackson/sliver.git" }

@@ -9,7 +9,7 @@ for rec in wb.search('https://www.justice.gov/usao-dc/pr/*', filter_field=['mime
         continue
     
     # there are some non-canonical URLs in there
-    if '?' in rec.original or '&' in rec.original:
+    if '?' in rec.original or '&' in rec.original or '%' in rec.original:
         continue
 
     if rec.original not in urls:
