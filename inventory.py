@@ -7,8 +7,11 @@ for rec in wb.search('https://www.justice.gov/usao-dc/pr/*', filter_field=['mime
     # some of these aren't 200 OK
     if rec.status_code != 200:
         continue
+
+    if rec.original.startswith('http://'):
+        continue
     
-    # there are some non-canonical URLs in there
+    # there are some non-canonical URLs in there that must've been discovered by scraping the html
     if '?' in rec.original or '&' in rec.original or '%' in rec.original:
         continue
 

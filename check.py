@@ -44,7 +44,9 @@ with sync_playwright() as p:
                     break
 
         if 'Page not found' in page.inner_html('body'):
-            print(url)
+            print(f"💥 {url}")
             output.write(url + "\n")
+        else:
+            print(f"✅ {url}")
 
         time.sleep(1)
